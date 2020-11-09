@@ -3,14 +3,17 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
+        /*
         BinaryTreeTwo binaryTree = new BinaryTreeTwo();
+
+
         binaryTree.addNodeToTree("forsta ", 50);
         binaryTree.addNodeToTree("andra ", 25);
         binaryTree.addNodeToTree("tredje", 15);
         binaryTree.addNodeToTree("fjarde",30);
         binaryTree.addNodeToTree("femte", 75);
         binaryTree.addNodeToTree("sjätte", 85);
-
+         */
 
         BinaryTree bT = new BinaryTree();
 
@@ -33,10 +36,6 @@ public class Main {
 
         System.out.println("printTreePostOrder");
         bT.printTreePostOrder();
-
-
-
-
 
     }
 }
