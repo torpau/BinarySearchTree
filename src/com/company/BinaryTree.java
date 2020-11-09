@@ -13,6 +13,7 @@ public class BinaryTree {
         }
     }
 
+    // -----------
     public void printTreeInOrder() {
         printTreeInOrder(root);
     }
@@ -26,6 +27,7 @@ public class BinaryTree {
         printTreeInOrder(tree.right);
     }
 
+    // -----------
     public void printTreeInReverseOrder(){
         printTreeInReverseOrder(root);
     }
@@ -39,6 +41,34 @@ public class BinaryTree {
         printTreeInReverseOrder(tree.left);
     }
 
+    // -----------
+    public void printTreePostOrder(){
+        printTreePostOrder(root);
+    }
+
+    private void printTreePostOrder(Node tree) {
+        if(tree == null){
+            return;
+        }
+        printTreePostOrder(tree.left);
+        printTreePostOrder(tree.right);
+        System.out.println(tree.key);
+    }
+
+    // -----------
+    public void printTreePreOrder(){
+        printTreePreOrder(root);
+    }
+
+    private void printTreePreOrder(Node tree) {
+        if(tree == null){
+            return;
+        }
+        System.out.println(tree.key);
+        printTreePreOrder(tree.left);
+        printTreePreOrder(tree.right);
+    }
+    // -----------
     public void insert(int key){
         root = insertRec(root, key);
     }
