@@ -3,28 +3,32 @@ package com.company;
 public class BubbleSort {
 
 
-    public static void main(String[] args){
+    public void sort(int[] array){
 
-
-        int[] test = {27,3,38,9,43,20,82};
         int snurr;
 
         do {
             snurr = 0;
-            for(int i = 0; i < test.length-1; i++) {
-                if(test[i]>test[i+1]) {
-                    int tmp = test[i];
-                    test[i] = test[i + 1];
-                    test[i + 1] = tmp;
+            for(int i = 0; i < array.length-1; i++) {
+                if(array[i]>array[i+1]) {
+                    int tmp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = tmp;
                     snurr++;
                 }
-                for(int e:test) {
-                    System.out.print(e + ", ");
-                }
-                System.out.println("\n");
             }
 
         } while(snurr != 0);
+
+    }
+    public void printSortedArray(int[] array){
+        sort(array);
+        String outputString = "";
+        for(int e: array){
+            outputString += e + ", ";
+        }
+        outputString= outputString.substring(0, outputString.length()-2);
+        System.out.println(outputString);
 
     }
 }
