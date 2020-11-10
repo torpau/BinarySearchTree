@@ -24,7 +24,9 @@ public class Main {
         bT.insert(75);
         bT.insert(85);
 
+        bT.deleteObjectInTree(75);
 
+/*
         System.out.println("printTreeInOrder");
         bT.printTreeInOrder();
 
@@ -36,6 +38,6 @@ public class Main {
 
         System.out.println("printTreePostOrder");
         bT.printTreePostOrder();
-
+*/
     }
 }

@@ -86,7 +86,7 @@ public class BinaryTree {
         }
         return tree;
     }
-
+/*
     public void deleteTreeObject(int key) {
         Node currentIndex = root;
         for(int i = 0; i <= root.key; i++){
@@ -101,9 +101,29 @@ public class BinaryTree {
         }
     }
 
+ */
+
+    public void deleteObjectInTree(int key){
+        root = deleteObjectInTree(root, key);
+
+    }
+    private Node deleteObjectInTree(Node tree, int key){
+        if(tree == null) {
+            return tree;
+        }if(key == tree.key) {
+            System.out.println(tree.key);
+            return tree;
+        }
+            deleteObjectInTree(tree.left, key);
+            deleteObjectInTree(tree.right, key);
+
+
+        return tree;
+    }
+/*
     public static void main(String [] Args){
         BinaryTree bt = new BinaryTree();
-        /*
+
                 8
              3     10
            1  6       13
@@ -123,15 +143,6 @@ public class BinaryTree {
              print 8
          */
 
-        bt.insert(8);
-        bt.insert(3);
-        bt.insert(10);
-        bt.insert(1);
-        bt.insert(6);
-        bt.insert(13);
-        bt.insert(13);
-        //bt.printTreeInOrder();
-        bt.deleteTreeObject(3);
-        bt.printTreeInReverseOrder();
+
     }
-}
+//}
