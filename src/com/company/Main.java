@@ -23,8 +23,11 @@ public class Main {
         bT.insert(30);
         bT.insert(75);
         bT.insert(85);
+        bT.insert(72);
 
         bT.deleteObjectInTree(75);
+        System.out.println("printTreeInOrder");
+        bT.printTreeInOrder();
 
 /*
         System.out.println("printTreeInOrder");

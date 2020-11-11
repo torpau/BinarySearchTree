@@ -2,6 +2,7 @@ package com.company;
 
 public class BinaryTree {
     Node root;
+    Node parent;
 
     class Node{
         Node left;
@@ -104,19 +105,67 @@ public class BinaryTree {
  */
 
     public void deleteObjectInTree(int key){
+
         root = deleteObjectInTree(root, key);
+
 
     }
     private Node deleteObjectInTree(Node tree, int key){
         if(tree == null) {
             return tree;
-        }if(key == tree.key) {
+        }if(tree.key == key && key == root.key){
+            //root.right.left = root.left;
+            //root = root.right;
+            //tree = root;
+
+            Node subTree = tree.right;
+            Node subTreeParent = subTree;
+            while(subTree.left!=null){
+                subTreeParent = subTree;
+                subTree = subTree.left;
+
+            }
+            System.out.println(subTree.key);
+            System.out.println(subTreeParent.key);
+
+                System.out.println("root" + root.key);
+           }
+        else if(tree.key == key) {
+            Node subTree = tree.right;
+            Node subTreeParent = subTree;
+            while(subTree.left!=null){
+                subTreeParent = subTree;
+                subTree = subTree.left;
+            }
+            if(subTree.right != null){
+                subTreeParent.right = subTree.right;
+            }
+            System.out.println(subTree.key);
+            System.out.println(subTreeParent.key);
+
+            System.out.println("root" + root.key);
+
+
+
+            /*
+            if(key < parent.key){
+                tree.right.left = tree.left;
+                parent.left = tree.right;
+            } else {
+                parent.right = tree.right;
+            }
+
+             */
+            System.out.println("p"+parent.key);
             System.out.println(tree.key);
             return tree;
-        }
-            deleteObjectInTree(tree.left, key);
-            deleteObjectInTree(tree.right, key);
 
+        }
+
+        parent = tree;
+        deleteObjectInTree(tree.left, key);
+        parent = tree;
+        deleteObjectInTree(tree.right, key);
 
         return tree;
     }
