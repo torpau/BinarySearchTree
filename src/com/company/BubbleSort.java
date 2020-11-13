@@ -1,12 +1,8 @@
 package com.company;
 
 public class BubbleSort {
-
-
     public void sort(int[] array){
-
         int snurr;
-
         do {
             snurr = 0;
             for(int i = 0; i < array.length-1; i++) {
@@ -19,7 +15,6 @@ public class BubbleSort {
             }
 
         } while(snurr != 0);
-
     }
     public void printSortedArray(int[] array){
         sort(array);
@@ -29,6 +24,5 @@ public class BubbleSort {
         }
         outputString= outputString.substring(0, outputString.length()-2);
         System.out.println(outputString);
-
     }
 }

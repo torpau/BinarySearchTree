@@ -2,7 +2,6 @@ package com.company;
 
 public class BinaryTree {
     Node root;
-    Node parent;
 
     class Node {
         Node left;
@@ -89,7 +88,7 @@ public class BinaryTree {
     }
 
 
-    public boolean remove(int key) {
+    public void remove(int key) {
         Node currNode = root;
         Node parentNode = root;
         boolean isLeft = true;
@@ -103,12 +102,12 @@ public class BinaryTree {
                 isLeft=false;
                 currNode = currNode.right;
             }
-            if(currNode == null){return false;}
+            if(currNode == null){return;}
         }
         if(currNode.left == null && currNode.right == null){
             if(currNode == root){
                 root = null;
-            } else if(isLeft == true){
+            } else if(isLeft){
                 parentNode.left = null;
             }else{
                 parentNode.right = null;
@@ -126,10 +125,10 @@ public class BinaryTree {
         }else if(currNode.left == null){
             if(currNode == root){
                 root = currNode.right;
-            } else if (isLeft == true){
+            } else if (isLeft){
                 parentNode.left = currNode.right;
             } else{
-                parentNode.right = currNode.left; // enl osäker källa ska currNode.right vara currNode.left;
+                parentNode.right = currNode.right;
             }
         }else{
             Node replace = getReplaceNode(currNode);
@@ -143,9 +142,6 @@ public class BinaryTree {
             }
             replace.left = currNode.left;
         }
-
-
-        return true;
     }
     public Node getReplaceNode(Node replaceNode) {
         Node replaceParent = replaceNode;
