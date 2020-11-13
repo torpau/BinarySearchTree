@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         BinaryTree bT = new BinaryTree();
 
         bT.insert(50);
@@ -17,14 +16,6 @@ public class Main {
         bT.insert(26);
         bT.insert(27);
 
-        
-        System.out.println("printTreeInOrder");
-        bT.printTreeInOrder();
-
-
-        System.out.println("printTreeInOrder");
-        bT.printTreeInOrder();
-
         System.out.println("printTreeInReverseOrder");
         bT.printTreeInReverseOrder();
 
@@ -34,5 +25,21 @@ public class Main {
         System.out.println("printTreePostOrder");
         bT.printTreePostOrder();
 
+        System.out.println("printTreeInOrder");
+        bT.printTreeInOrder();
+
+        System.out.println("--------------- delete nr.25--------------------");
+        bT.remove(25);
+        bT.printTreeInOrder();
+
+        System.out.println("--------------- delete nr.75--------------------");
+        bT.remove(75);
+        bT.printTreeInOrder();
+
+        System.out.println("--------------- delete root (50)--------------------");
+        bT.remove(50);
+        bT.printTreeInOrder();
+
+        System.out.println("root is now: " + bT.root.key);
     }
 }
